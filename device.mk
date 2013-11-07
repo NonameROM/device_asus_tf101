@@ -14,10 +14,6 @@
 # limitations under the License.
 #
 
-#kernel
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/kernel:kernel
-
 # overlay
 DEVICE_PACKAGE_OVERLAYS += device/asus/tf101/overlay
 
