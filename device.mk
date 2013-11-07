@@ -26,6 +26,10 @@ $(call inherit-product-if-exists, vendor/asus/tf101/tf101-vendor.mk)
 
 # firmware
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/etc/nvram.txt:system/etc/nvram.txt \
+    $(LOCAL_PATH)/prebuilt/etc/nvram_nh615.txt:system/etc/nvram_nh615.txt \
+    $(LOCAL_PATH)/prebuilt/etc/nvram_murata.txt:system/etc/nvram_murata.txt \
+    $(LOCAL_PATH)/prebuilt/etc/nvram_nh615_sl101.txt:system/etc/nvram_nh615_sl101.txt \
     $(LOCAL_PATH)/prebuilt/etc/nvram_4329.txt:system/etc/nvram_4329.txt \
     $(LOCAL_PATH)/prebuilt/etc/bluetooth/bdaddr:system/etc/bluetooth/bdaddr \
     $(LOCAL_PATH)/prebuilt/vendor/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd \
@@ -33,6 +37,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/vendor/firmware/fw_bcmdhd_p2p.bin:system/vendor/firmware/fw_bcmdhd_p2p.bin \
     $(LOCAL_PATH)/prebuilt/vendor/firmware/fw_bcmdhd_apsta.bin:system/vendor/firmware/fw_bcmdhd_apsta.bin \
     $(LOCAL_PATH)/prebuilt/vendor/firmware/BCM4329B1_002.002.023.0797.0863.hcd:system/etc/firmware/BCM4329B1_002.002.023.0797.0863.hcd
+
+# KAT kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/vendor/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd
 
 # KAT Utilities
 PRODUCT_COPY_FILES += \
@@ -102,13 +110,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/bin/wifimacwriter:system/bin/wifimacwriter \
     $(LOCAL_PATH)/prebuilt/etc/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
     $(LOCAL_PATH)/prebuilt/data/srs_processing.cfg:system/data/srs_processing.cfg
-
-# wireless
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/nvram.txt:system/etc/nvram.txt \
-    $(LOCAL_PATH)/prebuilt/etc/nvram_nh615.txt:system/etc/nvram_nh615.txt \
-    $(LOCAL_PATH)/prebuilt/etc/nvram_murata.txt:system/etc/nvram_murata.txt \
-    $(LOCAL_PATH)/prebuilt/etc/nvram_nh615_sl101.txt:system/etc/nvram_nh615_sl101.txt
 
 # bluetooth
 PRODUCT_COPY_FILES += \
