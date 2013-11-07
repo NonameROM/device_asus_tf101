@@ -167,3 +167,11 @@ PRODUCT_PROPERTY_OVERRIDES := \
     persist.sys.usb.config=mtp \
     wifi.supplicant_scan_interval=180 \
     ro.opengles.version=196608
+
+# adb has root
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.allow.mock.location=1 \
+    persist.sys.usb.config=mtp \
+    ro.adb.secure=0 \
+    ro.debuggable=1
