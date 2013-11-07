@@ -164,6 +164,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.carrier=wifi-only \
     ro.sf.lcd_density=160 \
     dalvik.vm.dexopt-data-only=1 \
-    persist.sys.usb.config=mtp,adb \
+    persist.sys.usb.config=mtp \
     wifi.supplicant_scan_interval=180 \
     ro.opengles.version=196608
