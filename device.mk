@@ -128,10 +128,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
     $(LOCAL_PATH)/prebuilt/lib/modules/isofs.ko:system/lib/modules/isofs.ko
 
-# init.d
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/prebuilt/etc/init.d/05modules:system/etc/init.d/05modules
-
 # tablet
 PRODUCT_CHARACTERISTICS := tablet
 
