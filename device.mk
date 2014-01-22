@@ -159,7 +159,8 @@ PRODUCT_PACKAGES += \
     tinyrec \
     audio_policy.tegra \
     audio.primary.tegra \
-    librs_jni
+    librs_jni \
+    libnetcmdiface
 
 # override
 PRODUCT_PROPERTY_OVERRIDES := \
