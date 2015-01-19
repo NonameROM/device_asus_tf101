@@ -48,7 +48,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/wifi/nvram_nh615.txt:system/etc/nvram_nh615.txt \
     $(LOCAL_PATH)/prebuilt/wifi/nvram.txt:system/etc/nvram.txt
 
-# Input stuff
+# Inputs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/usr/idc/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc \
     $(LOCAL_PATH)/prebuilt/usr/idc/elantech_touchscreen.idc:system/usr/idc/elantech_touchscreen.idc \
@@ -69,6 +69,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilt/etc/firmware/EC/SL101-DOCK-0106.rom:system/etc/firmware/EC/SL101-DOCK-0106.rom \
 	$(LOCAL_PATH)/prebuilt/etc/firmware/EC/TF101-DOCK-0213.rom:system/etc/firmware/EC/TF101-DOCK-0213.rom \
 	$(LOCAL_PATH)/prebuilt/etc/firmware/EC/TF101G-DOCK-0213.rom:system/etc/firmware/EC/TF101G-DOCK-0213.rom
+	
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
@@ -83,6 +84,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     tf.enable=y \
     ro.opengles.version=131072 \
 	ro.opengles.surface.rgb565=true \
+    ro.build.selinux=0 \
+    ro.boot.selinux=disabled \
     drm.service.enabled=1
 
 # TF101 specific overrides
@@ -148,6 +151,7 @@ PRODUCT_PACKAGES += \
     libemoji \
     blobpack_tf \
     thtt \
+    e2fsck \
     ntfs-3g.probe \
     ntfsfix \
     ntfs-3g \
@@ -166,23 +170,35 @@ PRODUCT_PACKAGES += \
     org.omnirom.asusec \
     libasusec_jni
 
-# media config xml file
+# Wifi Packages
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    hostapd \
+    dhcpcd.conf \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
+
+# Media Config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml
 
-# media codec config xml file
+# Media Codecs
 PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml
 
-# Camera config file
+# Camera Config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/nvcamera.conf:system/etc/nvcamera.conf
 
-# audio mixer paths
+# Audio Mixer
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
-# audio policy configuration
+# Audio Policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 

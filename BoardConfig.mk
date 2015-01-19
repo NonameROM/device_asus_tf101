@@ -86,6 +86,7 @@ BOARD_NEEDS_OLD_HWC_API := true
 BOARD_NEED_OMX_COMPAT := true
 BOARD_NEEDS_LZMA_MINIGZIP := true
 BOARD_USES_PROPRIETARY_OMX := TF101
+MALLOC_IMPL := dmalloc
 
 BOARD_USE_SKIA_LCDTEXT := true
 BOARD_NO_ALLOW_DEQUEUE_CURRENT_BUFFER := true
@@ -95,10 +96,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/asus/tf101/recovery/recovery.mk
 TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
-# Comment the following if using custom optimizations that result in too large recovery.img stopping build, keeping in mind that said recovery.img is NOT usable if > 5MB size.
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 5242880
-# Uncomment the following and comment above if recovery.img size stopping desired build.
-#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 6242880 #To allow user build to complete, NOT a usable recovery.img for tf101
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8242880
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 14372306944
 BOARD_FLASH_BLOCK_SIZE := 4096
